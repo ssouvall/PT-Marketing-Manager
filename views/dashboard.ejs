@@ -1,0 +1,85 @@
+<%- include("partials/header") -%>
+
+<main class="dashboard col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Dashboard</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <span data-feather="calendar"></span>
+          This week
+        </button>
+      </div>
+    </div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="data card text-center shadow to-do">
+          <div class="card-body">
+            <h5 class="card-title">New Referrals</h5>
+            <p>6</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <div class="data card text-center shadow to-do">
+          <div class="card-body">
+            <h5 class="card-title">Visits</h5>
+              <p>90</p>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-4">
+        <div class="data card text-center shadow to-do">
+          <div class="card-body">
+            <h5 class="card-title">Evals</h5>
+              <p>7</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+        <div class="card text-center shadow to-do">
+            <div class="card-body">
+              <h5 class="card-title">To-Do This Week</h5>
+              <ul>
+                <div class="to-do-item">
+                    <li><input type="checkbox" class="to-do-checkbox"><label>Brochures to Dr. Heiden</label></li>
+                </div>
+                <div class="to-do-item">
+                  <li><input type="checkbox" class="to-do-checkbox"> <label>Put together quarterly marketing baskets</label> </li>
+                </div>
+                <div class="to-do-item">
+                  <li><input type="checkbox" class="to-do-checkbox"> <label>3 social media posts</label> </li>
+                </div>
+                <div class="to-do-item">
+                  <li><input type="checkbox" class="to-do-checkbox">  <label>Follow-up with new Chamber contacts</label> </li>
+                </div>
+
+              </ul>
+              <a href="#" class="btn btn-primary">See More</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-8">
+        <div class="new-contacts card text-center shadow">
+            <div class="card-body">
+              <h5 class="card-title">Top Referral Sources This Week</h5>
+              <div class="chart" id="barchart_values"></div>
+            </div>
+          </div>
+    </div> 
+</div>
+</div>
+
+
+</main>
+
+<%- include("partials/footer") -%>
