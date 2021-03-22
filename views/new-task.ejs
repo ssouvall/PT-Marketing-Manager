@@ -1,0 +1,64 @@
+<%- include("partials/header") -%>
+
+<main class="dashboard col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">New Task</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <span data-feather="calendar"></span>
+          This week
+        </button>
+      </div>
+    </div>
+  <div> 
+    
+    <button class="btn btn-primary back-button">Back</button>
+    
+  </div> 
+  <br>
+
+<form action="" method="POST">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label for="task-name" class="form-label">Referral Source</label>
+      <select class="form-select" id="task-name" required>
+        <option value="">Choose...</option>
+        <option value="heiden">Eric Heiden</option>
+        <option value="hedstrom">Dustin Hedstrom</option>
+        <option value="gay">Chris Gay</option>
+      </select>
+      <div class="invalid-feedback">
+        Please provide a valid name.
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="due-date" class="form-label">Due Date</label>
+      <input type="date" class="form-control" name="due-date" id="due-date">
+      <div class="invalid-feedback">
+        Please provide a valid date.
+      </div>
+    </div>
+
+      <div class="col-sm-12">
+        <label for="task-notes" class="form-label">Task</label>
+        <textarea name="task-notes"  class="form-control" id="task-notes" cols="50" rows="3"></textarea>
+        <div class="invalid-feedback">
+          Please write a task.
+        </div>
+      </div>
+
+  </div>
+  
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+</main>
+
+<%- include("partials/footer") -%>

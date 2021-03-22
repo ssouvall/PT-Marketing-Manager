@@ -1,0 +1,109 @@
+
+<%- include("partials/header") -%>
+
+<main class="dashboard col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Encounters</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <span data-feather="calendar"></span>
+          This week
+        </button>
+      </div>
+    </div>
+
+<div class="container encounters-log">
+    <div>
+      <a href="/new-encounter"><button type="submit" class="btn btn-primary contact-btn">+ Add Encounter</button></a>
+    </div>
+    <div class="contact-list">
+        <table class="contacts-list" style="width: 100%">
+          <tr>
+            <th>
+              Date
+            </th>
+            <th>
+              Referral Source
+            </th>
+            <th>
+              Type
+            </th>
+            <th>
+              Encounter Notes
+            </th>
+            <th>
+              Next Action
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <a href="/encounter">March 15, 2021</a>
+            </td>
+            <td>
+              Chris Gay
+            </td>
+            <td>
+              Office Visit
+            </td>
+            <td>
+              Dropped off thank you note, flyers and referral pads
+            </td>
+            <td>
+              April 1, 2021: Phone follow-up
+            </td>
+            <td>
+              <button class="btn btn-primary">X</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="#">March 2, 2021</a>
+            </td>
+            <td>
+              Eric Heiden
+            </td>
+            <td>
+              New Referral
+            </td>
+            <td>
+              Sent via fax, pt initials EG
+            </td>
+            <td>
+              March 15, thank you note and follow-up with supplemental materials
+            </td>
+            <td>
+              <button class="btn btn-primary">X</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="#">February 1, 2021</a>
+            </td>
+            <td>
+              Dustin Hedstrom
+            </td>
+            <td>
+              Phone call
+            </td>
+            <td>
+              Spoke with Dr. Heiden's nurse Kimberly re pt MG's current POC
+            </td>
+            <td>
+              Send MG's POC document
+            </td>
+            <td>
+              <button class="btn btn-primary">X</button>
+            </td>
+          </tr>
+        </table>
+    </div>
+</div>
+
+</main>
+
+
+<%- include("partials/footer") -%>

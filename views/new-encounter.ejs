@@ -1,0 +1,88 @@
+<%- include("partials/header") -%>
+
+<main class="dashboard col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">New Encounter</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <span data-feather="calendar"></span>
+          This week
+        </button>
+      </div>
+    </div>
+  <div> 
+    
+    <button class="btn btn-primary back-button">Back</button>
+    
+  </div> 
+  <br>
+
+<form action="" method="POST">
+  <div class="row g-3">
+    <div class="col-md-4">
+      <label for="encounter-name" class="form-label">Referral Source</label>
+      <select class="form-select" id="encounter-name" required>
+        <option value="">Choose...</option>
+        <option value="heiden">Eric Heiden</option>
+        <option value="hedstrom">Dustin Hedstrom</option>
+        <option value="gay">Chris Gay</option>
+      </select>
+      <div class="invalid-feedback">
+        Please provide a valid name.
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="encounter-date" class="form-label">Date</label>
+      <input type="date" class="form-control" name="encounter-date" id="encounter-date">
+      <div class="invalid-feedback">
+        Please provide a valid date.
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="encounter-name" class="form-label">Encounter type</label>
+      <input type="text" class="form-control" name="encounter-type" id="encounter-type" placeholder="Office visit, phone call, new referral...">
+      <div class="invalid-feedback">
+        Please provide a valid type.
+      </div>
+    </div>
+    
+      <div class="col-sm-12">
+        <label for="encounter-notes" class="form-label">Notes</label>
+        <textarea name="encounter-notes"  class="form-control" id="encounter-notes" cols="50" rows="3"></textarea>
+        <div class="invalid-feedback">
+          Please write some notes.
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <label for="next-action" class="form-label">Next follow-up</label>
+        <textarea name="next-action"  class="form-control" id="next-action" cols="50" rows="3"></textarea>
+        <div class="invalid-feedback">
+          Please set a follow-up action.
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="fu-deadline" class="form-label">Follow-up deadline</label>
+        <input type="date" class="form-control" name="fu-deadline" id="fu-deadline">
+        <div class="invalid-feedback">
+          Please provide a valid date.
+        </div>
+      </div>
+
+  </div>
+  
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+</main>
+
+<%- include("partials/footer") -%>

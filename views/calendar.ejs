@@ -2,7 +2,7 @@
 
 <main class="dashboard col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Test</h1>
+      <h1 class="h2">Calendar</h1>
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group me-2">
           <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -14,71 +14,73 @@
         </button>
       </div>
     </div>
-
-<div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="data card text-center shadow to-do">
-          <div class="card-body">
-            <h5 class="card-title">Test</h5>
-            <p>6</p>
-          </div>
+      <div class="toolbar">
+        <div class="toggle">
+          <div class="toggle__option">week</div>
+          <div class="toggle__option toggle__option--selected">month</div>
         </div>
-
+        <div class="current-month">March 2021</div>
+        <div class="search-input">
+          <input type="text" value="What are you looking for?">
+          <i class="fa fa-search"></i>
+        </div>
       </div>
-      <div class="col-md-4">
-        <div class="data card text-center shadow to-do">
-          <div class="card-body">
-            <h5 class="card-title">Test</h5>
-              <p>90</p>
-          </div>
-        </div>
-        
+    <div class="calendar">
+      <div class="calendar__header">
+        <div>mon</div>
+        <div>tue</div>
+        <div>wed</div>
+        <div>thu</div>
+        <div>fri</div>
+        <div>sat</div>
+        <div>sun</div>
       </div>
-      <div class="col-md-4">
-        <div class="data card text-center shadow to-do">
-          <div class="card-body">
-            <h5 class="card-title">Test</h5>
-              <p>7</p>
-          </div>
-        </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">1</div>
+        <div class="calendar__day day">2</div>
+        <div class="calendar__day day">3</div>
+        <div class="calendar__day day">4</div>
+        <div class="calendar__day day">5</div>
+        <div class="calendar__day day">6</div>
+        <div class="calendar__day day">7</div>
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">8</div>
+        <div class="calendar__day day">9</div>
+        <div class="calendar__day day">10</div>
+        <div class="calendar__day day">11</div>
+        <div class="calendar__day day">12</div>
+        <div class="calendar__day day">13</div>
+        <div class="calendar__day day">14</div>        
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">15</div>
+        <div class="calendar__day day">16</div>
+        <div class="calendar__day day">17</div>
+        <div class="calendar__day day">18</div>
+        <div class="calendar__day day">19</div>
+        <div class="calendar__day day">20</div>
+        <div class="calendar__day day">21</div>    
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">22</div>
+        <div class="calendar__day day">23</div>
+        <div class="calendar__day day">24</div>
+        <div class="calendar__day day">25</div>
+        <div class="calendar__day day">26</div> 
+        <div class="calendar__day day">27</div> 
+        <div class="calendar__day day">28</div> 
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">29</div>
+        <div class="calendar__day day">30</div>
+        <div class="calendar__day day">31</div>
+        <div class="calendar__day day">1</div>
+        <div class="calendar__day day">2</div>
+        <div class="calendar__day day">3</div>
+        <div class="calendar__day day">4</div>
       </div>
     </div>
-    <div class="row">
-    <div class="col-md-4">
-        <div class="card text-center shadow to-do">
-            <div class="card-body">
-              <h5 class="card-title">Test</h5>
-              <ul>
-                <div class="to-do-item">
-                    <li><input type="checkbox" class="to-do-checkbox"><label>Brochures to Dr. Heiden</label></li>
-                </div>
-                <div class="to-do-item">
-                  <li><input type="checkbox" class="to-do-checkbox"> <label>Put together quarterly marketing baskets</label> </li>
-                </div>
-                <div class="to-do-item">
-                  <li><input type="checkbox" class="to-do-checkbox"> <label>3 social media posts</label> </li>
-                </div>
-                <div class="to-do-item">
-                  <li><input type="checkbox" class="to-do-checkbox">  <label>Follow-up with new Chamber contacts</label> </li>
-                </div>
-
-              </ul>
-              <a href="#" class="btn btn-primary">See More</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-md-8">
-        <div class="new-contacts card text-center shadow">
-            <div class="card-body">
-              <h5 class="card-title">Top Referral Sources This Week</h5>
-              <div class="chart" id="barchart_values"></div>
-            </div>
-          </div>
-    </div> 
-</div>
-</div>
-
 
 </main>
 

@@ -32,3 +32,9 @@ function drawChart() {
 $(window).resize(function(){
     drawChart();
   });
+
+  // Make back buttons functional
+
+  $(".back-button").click(function () {
+    window.history.back();
+  })
