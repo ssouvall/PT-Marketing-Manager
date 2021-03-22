@@ -32,48 +32,25 @@
                   Last Encounter
                 </th>
               </tr>
-              <tr>
-                <td>
-                  <a href="/eheiden">Eric Heiden</a>
-                </td>
-                <td>
-                  Heiden Orthopedics
-                </td>
-                <td>
-                  Dropped off flyers and referral pads
-                </td>
-                <td>
-                  <button class="btn btn-primary">X</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#">Dustin Hedstrom</a>
-                </td>
-                <td>
-                  Aspen Falls Spinal Care Center
-                </td>
-                <td>
-                  Scheduled lunch
-                </td>
-                <td>
-                  <button class="btn btn-primary">X</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#">Mark Peterson</a>
-                </td>
-                <td>
-                  Davidson Orthopedics
-                </td>
-                <td>
-                  Met for lunch, discussed current patients and how we can work together better
-                </td>
-                <td>
-                  <button class="btn btn-primary">X</button>
-                </td>
-              </tr>
+                <% contacts.forEach(function(contact){ %>
+                <% const fName = contact.firstName %>
+                <% const lName = contact.lastName %>
+                <% const company = contact.company %>
+                <tr>
+                  <td>
+                    <a href="/eheiden"> <%= fName  %> <%= lName %> </a>
+                  </td>
+                  <td>
+                    <%= company %>
+                  </td>
+                  <td>
+                    This will be a description of an encounter...
+                  </td>
+                  <td>
+                    <button class="btn btn-primary">X</button>
+                  </td>
+                </tr>
+              <% }); %>
             </table>
         </div>
     </div>

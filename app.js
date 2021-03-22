@@ -23,7 +23,23 @@ app.get("/calendar", function(req, res) {
 });
 
 app.get("/contacts", function(req, res) {
-    res.render('contacts')
+    // contacts.forEach(function(contact) {
+    //     res.render('contact'), {
+    //         firstName: contact.firstName,
+    //         lastName: contact.lastName,
+    //         company: contact.company,
+    //         contactType: contact.contactType,
+    //         email: contact.email,
+    //         address: contact.address,
+    //         address2: contact.address2,
+    //         country: contact.country,
+    //         state: contact.state,
+    //         zip: contact.zip  
+    //     }
+    // });
+    res.render('contacts', {
+        contacts: contacts
+    })
 });
 
 app.get("/tasks", function(req, res) {
