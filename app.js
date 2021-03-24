@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/Public"));
 
 const contacts = [];
 
@@ -23,32 +23,58 @@ app.get("/calendar", function(req, res) {
 });
 
 app.get("/contacts", function(req, res) {
-    // contacts.forEach(function(contact) {
-    //     res.render('contact'), {
-    //         firstName: contact.firstName,
-    //         lastName: contact.lastName,
-    //         company: contact.company,
-    //         contactType: contact.contactType,
-    //         email: contact.email,
-    //         address: contact.address,
-    //         address2: contact.address2,
-    //         country: contact.country,
-    //         state: contact.state,
-    //         zip: contact.zip  
-    //     }
-    // });
-    res.render('contacts', {
-        contacts: contacts
-    })
+        const newContact = contacts.forEach(function(contact) {
+                const addContact = {
+                fName: contact.firstName,
+                lName: contact.lastName,
+                company: contact.company,
+                contactType: contact.contactType,
+                email: contact.email,
+                phone: contact.phone,
+                address: contact.address,
+                address2: contact.address2,
+                city: contact.city,
+                state: contact.state,
+                zip: contact.zip 
+                }
+                
+        })
+        res.render('contacts', {
+            contacts: contacts,
+            newContact: newContact
+            }
+            
+        )
+
+        
 });
 
 app.get("/tasks", function(req, res) {
     res.render('tasks')
 });
 
-app.get("/eheiden", function(req, res) {
-    res.render('eheiden')
-})
+app.get("/contacts/:contactName", function(req, res) {
+    let requestedContact = req.params.contactName
+    contacts.forEach(function(contact) {
+        let storedName = _.lowerCase(contact.lastName)
+        
+        if(storedName == requestedContact) {
+            res.render('contact', {
+                title: contact.firstName + " " + contact.lastName,
+                company: contact.company,
+                contactType: contact.contactType,
+                email: contact.email,
+                phone: contact.phone,
+                address: contact.address,
+                address2: contact.address2,
+                city: contact.city,
+                state: contact.state,
+                zip: contact.zip
+            });
+        }
+    });
+    
+});
 
 app.get("/encounter", function(req, res) {
     res.render('encounter')
@@ -81,15 +107,15 @@ app.post("/new-contact", function(req, res) {
         company: req.body.company,
         contactType: req.body.type,
         email: req.body.email,
+        phone: req.body.phone,
         address: req.body.address,
         address2: req.body.address2,
-        country: req.body.country,
+        city: req.body.city,
         state: req.body.state,
         zip: req.body.zip
     }
     contacts.push(contact);
     res.redirect("/contacts")
-    console.log(contacts)
 });
 
 app.listen(3001, function() {

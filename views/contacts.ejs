@@ -35,12 +35,13 @@
                 <% contacts.forEach(function(contact){ %>
                 <% const fName = contact.firstName %>
                 <% const lName = contact.lastName %>
-                <% const company = contact.company %>
+                <% const urlName = lName.toLowerCase() %>
                 <tr>
                   <td>
-                    <a href="/eheiden"> <%= fName  %> <%= lName %> </a>
+                    <a href="/contacts/<%= urlName %>"> <%= fName  %> <%= lName %> </a>
                   </td>
                   <td>
+                    <% const company = contact.company %>
                     <%= company %>
                   </td>
                   <td>
