@@ -13,6 +13,8 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(__dirname + "/Public"));
 
 const contacts = [];
+const tasks = [];
+const encounters = [];
 
 app.get("/", function(req, res) {
     res.render('dashboard')
@@ -23,25 +25,8 @@ app.get("/calendar", function(req, res) {
 });
 
 app.get("/contacts", function(req, res) {
-        const newContact = contacts.forEach(function(contact) {
-                const addContact = {
-                fName: contact.firstName,
-                lName: contact.lastName,
-                company: contact.company,
-                contactType: contact.contactType,
-                email: contact.email,
-                phone: contact.phone,
-                address: contact.address,
-                address2: contact.address2,
-                city: contact.city,
-                state: contact.state,
-                zip: contact.zip 
-                }
-                
-        })
         res.render('contacts', {
-            contacts: contacts,
-            newContact: newContact
+            contacts: contacts
             }
             
         )
@@ -50,7 +35,9 @@ app.get("/contacts", function(req, res) {
 });
 
 app.get("/tasks", function(req, res) {
-    res.render('tasks')
+    res.render('tasks', {
+        tasks: tasks
+    })
 });
 
 app.get("/contacts/:contactName", function(req, res) {
@@ -81,7 +68,9 @@ app.get("/encounter", function(req, res) {
 });
 
 app.get("/encounters", function(req, res) {
-    res.render('encounters')
+    res.render('encounters', {
+        encounters: encounters
+    });
 });
 
 app.get("/new-encounter", function(req, res) {
@@ -116,6 +105,68 @@ app.post("/new-contact", function(req, res) {
     }
     contacts.push(contact);
     res.redirect("/contacts")
+});
+
+app.post("/new-task", function(req, res) {
+    let taskNum = 0
+    const task = {
+        dueDate: req.body.due,
+        refSource: req.body.name,
+        description: req.body.description
+    }
+
+    tasks.push(task);
+    res.redirect("/tasks")
+    console.log(task)
+});
+
+app.post("/new-encounter", function(req, res) {
+    let encounter = {
+        date: req.body.date,
+        refSource: req.body.source,
+        type: req.body.type,
+        notes: req.body.notes,
+        next: req.body.next,
+        fuDate: req.body.fudate
+    }
+
+    encounters.push(encounter);
+    res.redirect("/encounters");
+    console.log(encounter)
+
+});
+
+app.get("/tasks/:taskid", function(req, res) {
+    let requestedTask = req.params.taskid
+    tasks.forEach(function(task) {
+        let storedTask = task.dueDate
+
+        if(storedTask == requestedTask) {
+            res.render('task', {
+                date: task.dueDate,
+                refSource: task.refSource,
+                description: task.description
+            })
+        }
+    })
+})
+
+app.get("/encounters/:encounterid", function(req, res) {
+    let requestedEncounter = req.params.encounterid
+    encounters.forEach(function(encounter) {
+        let storedEncounter = encounter.date
+
+        if(storedEncounter == requestedEncounter) {
+            res.render('encounter', {
+                date: encounter.date,
+                refSource: encounter.refSource,
+                type: encounter.type,
+                notes: encounter.notes,
+                fuDate: encounter.fuDate,
+                next: encounter.next
+            });
+        }
+    });
 });
 
 app.listen(3001, function() {

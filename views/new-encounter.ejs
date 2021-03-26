@@ -25,11 +25,11 @@
   <div class="row g-3">
     <div class="col-md-4">
       <label for="encounter-name" class="form-label">Referral Source</label>
-      <select class="form-select" id="encounter-name" required>
+      <select class="form-select" name="source" id="encounter-name" required>
         <option value="">Choose...</option>
-        <option value="heiden">Eric Heiden</option>
-        <option value="hedstrom">Dustin Hedstrom</option>
-        <option value="gay">Chris Gay</option>
+        <option>Eric Heiden</option>
+        <option>Dustin Hedstrom</option>
+        <option>Chris Gay</option>
       </select>
       <div class="invalid-feedback">
         Please provide a valid name.
@@ -38,7 +38,7 @@
 
     <div class="col-md-4">
       <label for="encounter-date" class="form-label">Date</label>
-      <input type="date" class="form-control" name="encounter-date" id="encounter-date">
+      <input type="date" class="form-control" name="date" id="encounter-date">
       <div class="invalid-feedback">
         Please provide a valid date.
       </div>
@@ -46,7 +46,7 @@
 
     <div class="col-md-4">
       <label for="encounter-name" class="form-label">Encounter type</label>
-      <input type="text" class="form-control" name="encounter-type" id="encounter-type" placeholder="Office visit, phone call, new referral...">
+      <input type="text" class="form-control" name="type" id="encounter-type" placeholder="Office visit, phone call, new referral...">
       <div class="invalid-feedback">
         Please provide a valid type.
       </div>
@@ -54,7 +54,7 @@
     
       <div class="col-sm-12">
         <label for="encounter-notes" class="form-label">Notes</label>
-        <textarea name="encounter-notes"  class="form-control" id="encounter-notes" cols="50" rows="3"></textarea>
+        <textarea name="notes"  class="form-control" id="encounter-notes" cols="50" rows="3"></textarea>
         <div class="invalid-feedback">
           Please write some notes.
         </div>
@@ -62,7 +62,7 @@
 
       <div class="col-sm-12">
         <label for="next-action" class="form-label">Next follow-up</label>
-        <textarea name="next-action"  class="form-control" id="next-action" cols="50" rows="3"></textarea>
+        <textarea name="next"  class="form-control" id="next-action" cols="50" rows="3"></textarea>
         <div class="invalid-feedback">
           Please set a follow-up action.
         </div>
@@ -70,7 +70,7 @@
 
       <div class="col-md-6">
         <label for="fu-deadline" class="form-label">Follow-up deadline</label>
-        <input type="date" class="form-control" name="fu-deadline" id="fu-deadline">
+        <input type="date" class="form-control" name="fudate" id="fu-deadline">
         <div class="invalid-feedback">
           Please provide a valid date.
         </div>

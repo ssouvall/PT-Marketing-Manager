@@ -99,6 +99,35 @@
               <button class="btn btn-primary">X</button>
             </td>
           </tr>
+          <% encounters.forEach(function(encounter) { %>
+            <tr>
+              <td>
+                <% const date = encounter.date %>
+                <a href="/encounters/<%= date %>"><%= date %></a>
+              </td>
+              <td>
+                <% const refSource = encounter.refSource %>
+                <%= refSource %>
+              </td>
+              <td>
+                <% const type = encounter.type %>
+                <%= type %>
+              </td>
+              <td>
+                <% const notes = encounter.notes %>
+                <%= notes %>
+              </td>
+              <td>
+                <% const fuDate = encounter.fuDate %>
+                <% const next = encounter.next %>
+
+                <%= fuDate %>: <%= next %>
+              </td>
+              <td>
+                <button class="btn btn-primary">X</button>
+              </td>
+            </tr>
+          <% }); %>
         </table>
     </div>
 </div>

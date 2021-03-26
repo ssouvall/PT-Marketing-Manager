@@ -86,6 +86,28 @@
                 <button class="btn btn-primary">X</button>
               </td>
             </tr>
+            <% tasks.forEach(function(task) { %>
+              <tr>
+                <td>
+                  <input type="checkbox">
+                </td>
+                <td>
+                  <% const date = task.dueDate %>
+                  <a href="/tasks/<%= date %>"><%= date %></a>
+                </td>
+                <td>
+                  <% const source = task.refSource %>
+                  <%= source %>
+                </td>
+                <td>
+                  <% const description = task.description %>
+                  <%= description %>
+                </td>
+                <td>
+                  <button class="btn btn-primary">X</button>
+                </td>
+              </tr>
+            <% }); %>
           </table>
       </div>
   </div>

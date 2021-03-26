@@ -25,11 +25,11 @@
   <div class="row g-3">
     <div class="col-md-6">
       <label for="task-name" class="form-label">Referral Source</label>
-      <select class="form-select" id="task-name" required>
+      <select class="form-select" name="name" id="task-name" required>
         <option value="">Choose...</option>
-        <option value="heiden">Eric Heiden</option>
-        <option value="hedstrom">Dustin Hedstrom</option>
-        <option value="gay">Chris Gay</option>
+        <option>Eric Heiden</option>
+        <option>Dustin Hedstrom</option>
+        <option>Chris Gay</option>
       </select>
       <div class="invalid-feedback">
         Please provide a valid name.
@@ -38,7 +38,7 @@
 
     <div class="col-md-6">
       <label for="due-date" class="form-label">Due Date</label>
-      <input type="date" class="form-control" name="due-date" id="due-date">
+      <input type="date" class="form-control" name="due" id="due-date">
       <div class="invalid-feedback">
         Please provide a valid date.
       </div>
@@ -46,7 +46,7 @@
 
       <div class="col-sm-12">
         <label for="task-notes" class="form-label">Task</label>
-        <textarea name="task-notes"  class="form-control" id="task-notes" cols="50" rows="3"></textarea>
+        <textarea name="description"  class="form-control" id="task-notes" cols="50" rows="3"></textarea>
         <div class="invalid-feedback">
           Please write a task.
         </div>
